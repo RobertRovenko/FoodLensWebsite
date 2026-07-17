@@ -1,0 +1,136 @@
+:root {
+  --pp-ink: #111413;
+  --pp-muted: #6b736e;
+  --pp-line: #e7eae7;
+  --pp-green: #1f9d58;
+}
+
+.privacy-page {
+  min-height: 100vh;
+  background: #fff;
+  color: var(--pp-ink);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.privacy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 6vw;
+  border-bottom: 1px solid var(--pp-line);
+}
+
+.privacy-logo {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--pp-ink);
+  letter-spacing: -0.3px;
+}
+
+.privacy-logo span {
+  color: var(--pp-green);
+}
+
+.privacy-back {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pp-muted);
+  text-decoration: none;
+}
+
+.privacy-back:hover {
+  color: var(--pp-ink);
+}
+
+.privacy-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 72px 6vw 120px;
+}
+
+.privacy-main h1 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.privacy-updated {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--pp-muted);
+}
+
+.privacy-summary {
+  margin: 32px 0 0;
+  padding: 20px 22px;
+  background: #f6f8f6;
+  border-radius: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--pp-ink);
+}
+
+.privacy-list {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+}
+
+.privacy-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 18px;
+  padding: 26px 0;
+  border-top: 1px solid var(--pp-line);
+}
+
+.privacy-item:last-child {
+  border-bottom: 1px solid var(--pp-line);
+}
+
+.privacy-index {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--pp-green);
+  padding-top: 3px;
+}
+
+.privacy-item h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.privacy-item p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--pp-muted);
+  margin: 0;
+}
+
+.privacy-contact {
+  margin-top: 48px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--pp-muted);
+}
+
+.privacy-contact a {
+  color: var(--pp-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  .privacy-main h1 {
+    font-size: 28px;
+  }
+
+  .privacy-item {
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+  }
+}
