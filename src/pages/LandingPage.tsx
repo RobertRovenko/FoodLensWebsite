@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "../styles/LandingPage.css";
 import Footer from "../components/Footer";
 import PrivacyPolicy from "./PrivacyPolicy";
-
+import mainIcon from "../assets/mainicon.png";
 const APP_DOWNLOAD_URL =
   "https://play.google.com/apps/testing/com.rovenkodev.foodlens";
 
@@ -110,11 +110,7 @@ function LandingPage() {
       <header className="hero">
         <nav className="navbar">
           <div className="logo">
-            <img
-              src="../src/assets/mainicon.png"
-              alt="FoodLens"
-              className="logo-icon"
-            />
+            <img src={mainIcon} alt="FoodLens" className="logo-icon" />
             <span className="logo-text">
               Food<span>Lens</span>
             </span>
