@@ -17,20 +17,7 @@
   --font-body: "Plus Jakarta Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 }
-@media (max-width: 980px) {
-  /* This hides the entire navigation container (text links + button) on mobile */
-  .nav-links {
-    display: none;
-  }
 
-  /* ... keep your existing mobile styles below ... */
-  .hero-container {
-    grid-template-columns: 1fr;
-    padding-top: 30px;
-  }
-
-  /* ... rest of your code ... */
-}
 * {
   box-sizing: border-box;
 }
@@ -39,6 +26,7 @@ body {
   background: var(--navy);
   color: var(--paper);
   font-family: var(--font-body);
+  margin: 0;
 }
 
 .page {
@@ -163,6 +151,21 @@ a {
   max-width: 620px;
 }
 
+/* The standalone logo text inserted into the hero, completely hidden on desktop */
+.hero-logo-text {
+  display: none;
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: var(--paper);
+  margin-bottom: 14px;
+}
+
+.hero-logo-text span {
+  color: var(--accent);
+}
+
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--accent);
@@ -227,7 +230,7 @@ h1 {
   color: var(--accent);
 }
 
-/* SCAN CARD (signature element) */
+/* SCAN CARD */
 
 .scan-card {
   position: relative;
@@ -332,25 +335,7 @@ h1 {
   );
   animation: scanSweep 2.6s ease-in-out infinite;
 }
-/* Additional mobile responsiveness for the header */
-@media (max-width: 500px) {
-  /* Reduce padding to reclaim space */
-  .navbar {
-    padding: 20px 4vw;
-  }
 
-  /* Shrink the logo text so it doesn't push links off-screen */
-  .logo-text {
-    font-size: 32px;
-  }
-
-  /* Shrink the logo icon to match the new text size */
-  .logo-icon {
-    width: 28px;
-    height: 28px;
-    margin-bottom: 5px;
-  }
-}
 @keyframes scanSweep {
   0% {
     top: -50%;
@@ -437,8 +422,6 @@ h1 {
   padding: 4px 10px;
   border-radius: 999px;
 }
-
-/* CERTIFIED TRADEMARK BADGE — added alongside the scan card, not instead of it */
 
 .certified-badge {
   position: absolute;
@@ -660,7 +643,6 @@ h1 {
     transparent 65%
   );
   filter: blur(12px);
-  z-index: 0;
 }
 
 .score-feature-ring {
@@ -733,18 +715,6 @@ h1 {
   letter-spacing: 2.5px;
   text-transform: uppercase;
   margin-top: 20px;
-}
-
-@media (max-width: 980px) {
-  .score-section {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .score-copy {
-    max-width: 100%;
-    justify-self: center;
-  }
 }
 
 /* STORY SECTION */
@@ -843,6 +813,9 @@ h1 {
   }
 }
 
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet & Smaller Laptops */
 @media (max-width: 980px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -865,17 +838,27 @@ h1 {
     font-size: 22px;
   }
 
-  .nav-links {
-    gap: 18px;
-  }
-
   .nav-text-link {
     display: none;
+  }
+
+  .nav-links {
+    gap: 18px;
   }
 
   .feature-grid,
   .how-steps {
     grid-template-columns: 1fr;
+  }
+
+  .score-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .score-copy {
+    max-width: 100%;
+    justify-self: center;
   }
 
   .footer {
@@ -886,5 +869,39 @@ h1 {
   .footer-right {
     flex-direction: column;
     gap: 12px;
+  }
+}
+
+/* Mobile Phones - Swap logo text from nav to hero */
+@media (max-width: 500px) {
+  .navbar {
+    padding: 16px 5vw;
+  }
+
+  /* Remove gap between logo and text since text is hidden */
+  .logo {
+    gap: 0;
+  }
+
+  /* Hide from navbar */
+  .logo-text {
+    display: none;
+  }
+
+  /* Unhide inside hero */
+  .hero-logo-text {
+    display: block;
+  }
+
+  /* Set size for standalone logo */
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0;
+  }
+
+  .nav-link {
+    padding: 10px 18px;
+    font-size: 13px;
   }
 }

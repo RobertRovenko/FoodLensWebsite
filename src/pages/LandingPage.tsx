@@ -3,6 +3,7 @@ import "../styles/LandingPage.css";
 import Footer from "../components/Footer";
 import PrivacyPolicy from "./PrivacyPolicy";
 import mainIcon from "../assets/mainicon.png";
+
 const APP_DOWNLOAD_URL =
   "https://play.google.com/apps/testing/com.rovenkodev.foodlens";
 
@@ -136,6 +137,10 @@ function LandingPage() {
 
         <div className="hero-container">
           <div className="hero-content animate">
+            <div className="hero-logo-text">
+              Food<span>Lens</span>
+            </div>
+
             <p className="eyebrow">Nutrition AI Scanner</p>
 
             <h1>
@@ -313,7 +318,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     </Routes>
   );
