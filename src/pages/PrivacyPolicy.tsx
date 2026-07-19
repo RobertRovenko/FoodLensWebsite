@@ -1,6 +1,6 @@
 import "../styles/PrivacyPolicy.css";
 import Footer from "../components/Footer";
-
+import mainIcon from "../assets/mainicon.png";
 const sections = [
   {
     title: "No data collection",
@@ -33,10 +33,14 @@ function PrivacyPolicy() {
     <div className="privacy-page">
       <header className="privacy-header">
         <a href="/" className="privacy-logo">
-          Food<span>Lens</span>
+          <img src={mainIcon} alt="FoodLens" className="logo-icon" />
+          <span className="logo-text">
+            Food<span>Lens</span>
+          </span>
         </a>
+
         <a href="/" className="privacy-back">
-          ← Back
+          Back
         </a>
       </header>
 

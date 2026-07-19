@@ -1,49 +1,39 @@
 .footer {
-  border-top: 1px solid #eee;
-
+  border-top: 1px solid rgba(186, 255, 61, 0.14);
   padding: 40px 6vw;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
-  color: #777;
+  color: #8fa6ad;
+  background: transparent;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .footer-right {
   display: flex;
-
   gap: 30px;
-
   align-items: center;
 }
 
 .footer a {
-  color: #111;
-
+  color: #f5f3ea;
   text-decoration: none;
-
   transition: 0.2s;
 }
 
 .footer a:hover {
-  color: #35b86b;
+  color: #baff3d;
 }
 
 @media (max-width: 900px) {
   .footer {
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 20px;
   }
 
   .footer-right {
     flex-direction: column;
-
     gap: 15px;
   }
 }

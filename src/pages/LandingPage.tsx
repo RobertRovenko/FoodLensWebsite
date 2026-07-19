@@ -3,6 +3,9 @@ import "../styles/LandingPage.css";
 import Footer from "../components/Footer";
 import PrivacyPolicy from "./PrivacyPolicy";
 
+const APP_DOWNLOAD_URL =
+  "https://play.google.com/apps/testing/com.rovenkodev.foodlens";
+
 function ScanIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +85,13 @@ function ScanCard() {
 
         <div className="scan-result">
           <div className="scan-score">
-            <span className="scan-score-letter">A</span>
+            <div className="score-ring-wrap">
+              <svg className="score-ring" viewBox="0 0 60 60">
+                <circle className="score-ring-bg" cx="30" cy="30" r="27" />
+                <circle className="score-ring-fill" cx="30" cy="30" r="27" />
+              </svg>
+              <span className="score-ring-letter">A</span>
+            </div>
             <span className="scan-score-caption">Nutrition Score</span>
           </div>
           <div className="scan-tags">
@@ -101,7 +110,14 @@ function LandingPage() {
       <header className="hero">
         <nav className="navbar">
           <div className="logo">
-            Food<span>Lens</span>
+            <img
+              src="../src/assets/mainicon.png"
+              alt="FoodLens"
+              className="logo-icon"
+            />
+            <span className="logo-text">
+              Food<span>Lens</span>
+            </span>
           </div>
 
           <div className="nav-links">
@@ -111,7 +127,12 @@ function LandingPage() {
             <a href="#how" className="nav-text-link">
               How it works
             </a>
-            <a href="#" className="nav-link">
+            <a
+              href={APP_DOWNLOAD_URL}
+              className="nav-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Get Started
             </a>
           </div>
@@ -134,7 +155,12 @@ function LandingPage() {
             </p>
 
             <div className="hero-actions">
-              <a href="#" className="button">
+              <a
+                href={APP_DOWNLOAD_URL}
+                className="button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Download FoodLens
               </a>
               <a href="#how" className="button-ghost">
@@ -231,14 +257,39 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="whole-food">
-        <div className="dark-content animate">
-          <h2>Whole foods first.</h2>
-
-          <p>
-            We believe better health starts with better understanding. FoodLens
-            encourages choices built around real, minimally processed foods.
+      <section className="score-section" id="score">
+        <div className="score-copy animate">
+          <p className="eyebrow">FoodLens Score&trade; Certified</p>
+          <h2>One number. Built by hand, not guesswork.</h2>
+          <p className="score-body">
+            The FoodLens Score is a trademarked scoring algorithm, engineered
+            and tuned by hand rather than left to a generic formula. It's built
+            to hold up in the real world, where a label is sometimes incomplete,
+            so it still returns a meaningful, trustworthy result even when key
+            data is missing.
           </p>
+        </div>
+
+        <div className="score-visual animate">
+          <div className="score-feature-glow" />
+          <div className="score-feature-ring">
+            <svg className="score-feature-svg" viewBox="0 0 220 220">
+              <path
+                className="score-feature-track"
+                d="M 37.88 182.12 A 102 102 0 1 1 182.12 182.12"
+              />
+              <path
+                className="score-feature-arc"
+                d="M 37.88 182.12 A 102 102 0 1 1 182.12 182.12"
+              />
+            </svg>
+            <div className="score-feature-center">
+              <span className="score-feature-number">99</span>
+              <span className="score-feature-sub">Score</span>
+              <span className="score-feature-tag">RATED</span>
+            </div>
+          </div>
+          <span className="score-feature-caption">FoodLens Score&trade;</span>
         </div>
       </section>
 
@@ -247,7 +298,12 @@ function LandingPage() {
 
         <p>Your nutrition journey starts with knowledge.</p>
 
-        <a href="#" className="button">
+        <a
+          href={APP_DOWNLOAD_URL}
+          className="button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Get FoodLens
         </a>
       </section>
