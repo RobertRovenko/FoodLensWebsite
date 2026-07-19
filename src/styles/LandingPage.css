@@ -319,7 +319,25 @@ h1 {
   );
   animation: scanSweep 2.6s ease-in-out infinite;
 }
+/* Additional mobile responsiveness for the header */
+@media (max-width: 500px) {
+  /* Reduce padding to reclaim space */
+  .navbar {
+    padding: 20px 4vw;
+  }
 
+  /* Shrink the logo text so it doesn't push links off-screen */
+  .logo-text {
+    font-size: 32px;
+  }
+
+  /* Shrink the logo icon to match the new text size */
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 5px;
+  }
+}
 @keyframes scanSweep {
   0% {
     top: -50%;
